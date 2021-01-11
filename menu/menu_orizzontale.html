@@ -1,0 +1,20 @@
+<script type="text/javascript">
+
+		function mostraMenu(menuCorrente) {
+			if (document.getElementById) {
+				questoMenu = document.getElementById(menuCorrente).style
+				if (questoMenu.display == "block") {
+					questoMenu.display = "none"
+				}
+				else {
+					questoMenu.display = "block"
+				}
+				return false
+			}
+			else {
+				return true
+			}
+		}
+</script>
+<script type="text/javascript" src="./menu/menu.js"></script>
+<style type="text/css">	.menu  {display:inline; margin-left:20px}</style>

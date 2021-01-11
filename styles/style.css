@@ -1,0 +1,1045 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 7-mar-2015, 7.05.00
+    Author     : Marco Bonaventura
+*/
+
+/* ..... global reset */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, img, strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, header, nav, article, aside, hgroup, section {
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    text-decoration: none;
+    
+
+}
+
+input[type="radio"]{
+    -webkit-appearance: radio;
+}
+
+section, article, header, footer, nav, aside, hgroup { display: block; }
+
+/* ...... web font embedding */
+
+@font-face {
+
+    font-family: 'SansationRegular';
+    src: 
+    url('Sansation_Regular.eot?'),
+    url('Sansation_Regular.woff') format('woff'), 
+    url('Sansation_Regular.ttf') format('truetype'), 
+    url('Sansation_Regular.svg#webfontLr2B6u5e') format('svg');
+
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    
+    font-family: 'SansationBold';
+    src: 
+    url('Sansation_Bold.eot?'),
+    url('Sansation_Bold.woff') format('woff'), 
+    url('Sansation_Bold.ttf') format('truetype'), 
+    url('Sansation_Bold.svg#webfont8dfDl0fr') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+time { color: aquamarine; font-size: 14px; }
+
+a { text-decoration: none; color: blue; }
+
+dl { float:right; display: inline;} 
+dt { float:left; display: inline; margin-right:10px; } 
+dd { float: left; display: inline; margin-right:50px; color: blue; }
+ul { display: inline; }
+li { display: inline; margin-left: 50px; margin-right: 50px;}
+
+
+
+html, body {
+    
+    height:100% !important;
+    min-height: 100%;
+
+    font-family: Arial,Helvetica,sans-serif;
+    
+    margin:0 auto;
+    padding:0;
+    border: 0;
+    
+    background-color: grey;
+    
+    overflow-x: hidden;
+    
+    
+}
+
+
+header {
+    position:fixed;
+    top: 0;
+    float: left;
+    
+    height: 150px;
+    width: 100%;
+    z-index: 1;
+    /*background-color: cornflowerblue;*/
+    
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid #4c4c4c;
+    
+}
+
+
+#wrapper {
+    
+    width: 100%;
+   
+    height: 100%;
+    height:auto !important;
+    min-height: 100%;
+       
+    position: relative;
+    z-index: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 120px;
+    
+    border-left-color: whitesmoke;
+    border-right-color: whitesmoke;
+    
+    border-left-style: solid;
+    border-right-style: solid;
+    
+    border-right-width: 3px;
+    border-left-width: 3px;
+
+    background-color: #ededed;
+        
+}
+
+#container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-top: 300px;
+    height: 500px;
+    z-index: 100;
+    
+}
+
+
+/*
+nav {
+    
+    float: left;
+    display: inline;
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    
+}
+*/
+
+#spessore {
+    
+    float:left;
+    display:block;
+    width:100%;
+    height: 100px;
+}
+
+article {
+    
+    width: 100%;
+    display: inline;
+    margin-top: 100px;
+    color: midnightblue;
+    padding: 0;
+}
+
+article ul {
+    
+    float: left;
+    height: 100%;
+    width: 100%;
+    color: darkslategray;
+    
+}
+
+article ul.suspended {
+    
+    float: left;
+    height: 100%;
+    width: 100%;
+    color: #bbb;
+}
+
+article li {
+    
+    display: inline; 
+    margin: 0; 
+    /*background-color: yellow;*/
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom:  5px;
+    
+   
+}
+
+
+article li#stop {
+    
+}
+
+
+    article li#day {
+    
+        float:left;
+        height: 100%;
+        width: 100%;
+        padding-bottom: 30px;
+        text-align: center;
+        /*background-color: mediumspringgreen;*/
+        font-size: 20px;
+    }
+
+    article li#id {
+    
+        /*display: none;*/
+        width: 3%;
+        margin-left: 2%;
+    }
+    
+    article li#lib {
+    
+        width: 3%;
+    }   
+    
+    article li#macro {
+    
+        width: 3%;
+    }
+    
+    article li#susp {
+        
+        display:none;
+        width: 1%;
+        background-image: url(images/switch_on_off.png);
+        
+    }
+    
+    article li#ven {
+        width: 3%;
+    }
+    
+    article li#nome {
+    
+        width: 7%;
+    }
+    
+    article li#param {
+        
+        width: 37%;
+       
+    }
+    
+    article li#desc {
+        
+        font-style: italic;
+        min-width: 37%;
+        width: 28%;
+       
+    }
+    
+    article li#edit {
+        width: 2%;
+                
+    }
+    
+    article li#del {
+        width: 2%;
+        height: 16px;
+    }
+    
+    article li#spazio2 {
+        float: left;
+        display: block;
+        width: 100%;
+        transition: background-color 1s ease;
+        /*background-color: whitesmoke;*/      
+        padding-top: 10px;
+        overflow: hidden;
+        height: 10px;
+        cursor: pointer;
+    }
+    
+    article li#spazio3 {
+        float: left;
+        display: none;
+        width: 100%;
+        transition: background-color 1s ease;
+        /*background-color: whitesmoke;*/      
+        padding-top: 10px;
+        overflow: hidden;
+        height: 50px;
+        cursor: pointer;
+    }
+    
+    #insertJob {
+        display: none;
+        background: grey;
+        color: #FFF;
+        padding: 10px;
+        list-style-type: none;
+
+    }
+    
+    
+    /* TOGLE INSERT SECTION */
+    .toggle {
+        float: left;
+        width: 100%;
+    }
+    
+    .less {
+        display: block;
+        float: left;
+        width: 96%;
+        height: 16px;
+        cursor: pointer;
+        margin-left: 2%;
+        margin-right:2%;
+        padding: 0;
+        background-color: #FFFFFF;
+        
+    }
+    
+    .less.active .button-read-more {
+        display: none;
+        padding: 0;
+        height: 100%;
+        
+     }
+    .button-read-less {
+        display: none;
+        padding: 0;
+        height: 100%;
+        margin-bottom: 7px;
+    }
+    .less.active .button-read-less {
+        width: 100%;
+        display: block; 
+        padding: 0;
+        height: 100%;
+        
+        background-image: url(images/az-subtle.png);
+        background-color:#d1d1d1; 
+        -webkit-border-bottom-right-radius: 4px;
+        -webkit-border-bottom-left-radius: 4px;
+        -moz-border-radius-bottomright: 4px;
+        -moz-border-radius-bottomleft: 4px;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+      
+    }
+    .less:hover{
+        background-color: #d6d6d6;
+        transition: background-color 1s ease;
+    }
+    .more {
+        display: block;
+        width: 96%;
+        margin-left: 2%;
+        margin-right:2%;
+        
+        display: inline-block;
+        height: 122px;
+        color: blue;
+        /*background-color: grey;*/
+    }
+    .more p {
+        margin: 0;
+        padding: 0;
+       
+    }
+    /* END TOGLE INSERT SECTION */
+    
+    
+    
+    /* TOGLE EDIT SECTION */
+    .toggle-EDIT {
+        width: 100%;
+    }
+    
+    .less-EDIT {
+        display:block;
+        float: left;
+        width: 1%;
+        height: 100%;
+        cursor: pointer;
+        margin-top: 5px;
+    }
+    
+    .less-EDIT.active .button-read-more-EDIT {
+        display: none;
+        padding: 0;
+        height: 100%;
+        
+     }
+    .button-read-less-EDIT {
+        display: none;
+        padding: 0;
+        margin-bottom: 7px;
+        
+    }
+    .less-EDIT.active .button-read-less-EDIT {
+        display:block;
+        width: 100%; 
+        padding: 0;
+        height: 100%;
+        padding-left: 30px;
+        
+    }
+    .less-EDIT:hover{
+       
+    }
+    .more-EDIT {
+        display: block;
+        width: 96%;
+        margin-left: 2%;
+        margin-right:2%;
+        
+        
+        display: inline-block;
+        height: 122px;
+        color: blue;
+        
+    }
+    .more-EDIT p {
+        margin: 0;
+        padding: 0;
+       
+    }
+    /* END toggle-EDIT */
+    
+    
+    
+    article li#spazio2:hover {
+        
+        background-color: #d6d6d6;
+    }
+    
+    article li#spazio3:hover {
+        
+        background-color: #d6d6d6;
+    }
+    
+    article li#spazio {
+        display: inline;
+        float: left;
+        height: 40px;
+        width: 100%;
+        /*background-color: #08b;*/
+    }
+    
+    #push-down {
+        float: left;
+        width: 100%;
+        height: 500px;
+       
+    }
+
+
+section {
+    
+    display: inline;
+    float: left;
+    width: 100%;
+    margin-bottom: 200px;
+    margin-top: 20px;
+   
+    
+    height: 100%;
+    height:auto !important;
+    min-height: 100%;
+    
+    /*background-color: whitesmoke;*/
+    
+}
+
+    #id {
+
+        display: inline;
+        float:  left;
+
+    }
+
+    #lib {
+        display: inline;
+        float:  left;
+
+    }
+
+    #macro {
+        display: inline;
+        float:  left;
+
+    }
+
+    #susp {
+        display: inline;
+        float:  left;
+
+    }
+    
+    #ven {
+        display: inline;
+        float: left;
+    }
+
+    #nome {
+        display: inline;
+        float:  left;
+
+    }
+    
+    #param {
+        display: inline;
+        float:  left;
+    }
+
+    #desc {
+        display: inline;
+        float:  left;
+
+    }
+    
+    #del {
+        display: inline;
+        float: left;
+    }
+
+    .Giornalieri {}
+    .Lunedi {}
+    .Martedi {}
+    .Mercoledi {}
+    .Giovedi {}
+    .Venerdi {}
+    .Sabato {}
+    
+    
+footer {
+    
+    clear: both;
+    float: left;
+    
+    height: 30px;
+    width: 100%;
+    
+    
+    color: aquamarine;
+    font-size: 14px;
+    
+    bottom: 0;
+    position: absolute;
+    
+    padding: 0;
+    padding-top: 5px;
+    margin: 0 auto;
+    
+    background-color: steelblue;
+    
+    
+}
+
+
+/******   FORM CSS   ******/
+.form { 
+    background: #636363;
+    background: -webkit-gradient(linear, left top, left bottom, from(#d1d1d1), to(#d1d1d1));
+    background: -webkit-linear-gradient(top, #d1d1d1, #d1d1d1);
+    background: -moz-linear-gradient(top, #d1d1d1, #d1d1d1);
+    background: -ms-linear-gradient(top, #d1d1d1, #d1d1d1);
+    background: -o-linear-gradient(top, #d1d1d1, #d1d1d1);
+    background-image: -ms-linear-gradient(top, #d1d1d1 0%, #d1d1d1 100%);
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    font-family: 'Helvetica Neue',Helvetica,sans-serif;
+    text-decoration: none;
+
+    color: #1f7aab;
+    font-size: 16px; 
+        
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+} 
+.content { 
+    margin: 0 auto;
+    padding: 0;
+} 
+.form label { 
+    color: #222222; 
+    font-size: 16px; 
+    margin-left: 5%;
+} 
+
+.form span {
+    
+    margin-left: 5%;
+}
+.form input[type=radio], input[type=checkbox]{ 
+    width: 80%; 
+    margin-left: 10%;
+    color: darkslategray; 
+    -webkit-appearance: radio;
+
+} 
+.form div { 
+    display: inline;
+} 
+.form form select{ 
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: #666666; 
+    border-radius: 4px; 
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding: 3px; 
+    margin-left: 5%;
+    width: 100%; 
+   
+} 
+.form form textarea#nota {
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: #666666; 
+    border-radius: 4px; 
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding: 0px; 
+    width: 100%; 
+} 
+.form form textarea#parametri  {
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: #666666; 
+    border-radius: 4px; 
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    width: 100%; 
+    height: 100%;
+} 
+
+.form input{ 
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: #666666; 
+    border-radius: 4px; 
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding: 3px; 
+    width: 80%;
+    height: 100%;
+    float: left;
+    margin-left: 9%;
+} 
+.form input#lib {
+    float: left;
+}
+.form input:not([type=submit]):focus {
+    background-color:lightgoldenrodyellow;
+}
+.form, .form h1, .form h2{ 
+    font-family: 'Arial'; 
+} 
+.form h1{ 
+    font-size: 40px; 
+    color: #607A75; 
+    padding: 0px; 
+    margin: 0px; 
+    margin-bottom: 10px; 
+    border-bottom-style: dotted; 
+    border-bottom-color: #CCCCCC; 
+    border-bottom-width: 2px; 
+    border-radius: 0px; 
+    background-color: #FFFFFF; 
+} 
+.clear{ 
+    clear: both; 
+} 
+.form textarea{ 
+    height: 100px; 
+    width: 100%; 
+    padding: 3px;
+   
+} 
+.form textarea:not([type=submit]):focus {
+    background-color: lightgoldenrodyellow;
+}
+.form input[type=submit]{ 
+    height:100px;
+    width:100px;
+    text-shadow: #addc7e 0 1px 0;
+    border: 1px solid #447314;
+    background: #8dc059;
+    background: -webkit-gradient(linear, left top, left bottom, from(#6aa436), to(#6aa436));
+    background: -webkit-linear-gradient(top, #6aa436, #8dc059);
+    background: -moz-linear-gradient(top, #6aa436, #8dc059);
+    background: -ms-linear-gradient(top, #6aa436, #8dc059);
+    background: -o-linear-gradient(top, #6aa436, #8dc059);
+    background-image: -ms-linear-gradient(top, #6aa436 0%, #8dc059 100%);
+    color: #31540c;
+    font-family: helvetica, serif;
+    margin: auto;
+    margin-left: 7%;
+   
+} 
+.form input[type=submit]:hover {
+    cursor: pointer;
+    border: 1px solid #447314;
+    text-shadow: #31540c 0 1px 0;
+    background: #6aa436;
+    background: -webkit-gradient(linear, left top, left bottom, from(#8dc059), to(#6aa436));
+    background: -webkit-linear-gradient(top, #8dc059, #6aa436);
+    background: -moz-linear-gradient(top, #8dc059, #6aa436);
+    background: -ms-linear-gradient(top, #8dc059, #6aa436);
+    background: -o-linear-gradient(top, #8dc059, #6aa436);
+    background-image: -ms-linear-gradient(top, #8dc059 0%, #6aa436 100%);
+    color: #fff;
+}
+.field{ 
+    
+    margin: 0 auto;
+    margin-left: 5%;
+} 
+/******   END FORM CSS   ******/
+
+/******   FORM CSS   ******/
+.formEDIT { 
+    background: #9c9c9c;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#9c9c9c));
+    background: -webkit-linear-gradient(top, #ededed, #9c9c9c);
+    background: -moz-linear-gradient(top, #ededed, #9c9c9c);
+    background: -ms-linear-gradient(top, #ededed, #9c9c9c);
+    background: -o-linear-gradient(top, #ededed, #9c9c9c);
+    background-image: -ms-linear-gradient(top, #ededed 0%, #9c9c9c 100%);
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-family: 'Helvetica Neue',Helvetica,sans-serif;
+    text-decoration: none;
+    
+    
+    color: #1f7aab;
+    font-size: 16px; 
+        
+    padding-bottom: 10px;
+    
+} 
+.content { 
+    margin: 0 auto;
+    padding: 0;
+} 
+.formEDIT label { 
+    color: #222222; 
+    font-size: 16px; 
+    margin-left: 5%;
+} 
+
+.formEDIT span {
+    
+    margin-left: 5%;
+}
+.formEDIT input[type=radio], input[type=checkbox]{ 
+    width: 80%; 
+    margin-left: 10%;
+} 
+.formEDIT div { 
+    display: inline;
+} 
+.formEDIT form select{ 
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: #666666; 
+    border-radius: 4px; 
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding: 3px; 
+    margin-left: 5%;
+    width: 100%; 
+   
+} 
+.formEDIT form textarea#nota {
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: #666666; 
+    border-radius: 4px; 
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding: 0px; 
+    width: 100%; 
+} 
+.formEDIT form textarea#parametri  {
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: #666666; 
+    border-radius: 4px; 
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    width: 100%; 
+    height: 100%;
+} 
+
+input[type="radio"]{
+    -webkit-appearance: radio;
+}
+
+.formEDIT input{ 
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: #666666; 
+    border-radius: 4px; 
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding: 3px; 
+    /*width: 80%;
+    height: 100%;*/
+    float: left;
+    margin-left: 9%;
+} 
+.formEDIT input#lib {
+    float: left;
+}
+.formEDIT input:not([type=submit]):focus {
+    background-color:lightgoldenrodyellow;
+}
+.formEDIT, .formEDIT h1, .formEDIT h2{ 
+    font-family: 'Arial'; 
+} 
+.formEDIT h1{ 
+    font-size: 40px; 
+    color: #607A75; 
+    padding: 0px; 
+    margin: 0px; 
+    margin-bottom: 10px; 
+    border-bottom-style: dotted; 
+    border-bottom-color: #CCCCCC; 
+    border-bottom-width: 2px; 
+    border-radius: 0px; 
+    background-color: #FFFFFF; 
+} 
+.clear{ 
+    clear: both; 
+} 
+.formEDIT textarea{ 
+    height: 100px; 
+    width: 100%; 
+    padding: 3px;
+   
+} 
+.formEDIT textarea:not([type=submit]):focus {
+    background-color: lightgoldenrodyellow;
+}
+.formEDIT input[type=submit]{ 
+    height:100px;
+    width:100px;
+    text-shadow: #addc7e 0 1px 0;
+    border: 1px solid #447314;
+    background: #8dc059;
+    background: -webkit-gradient(linear, left top, left bottom, from(#6aa436), to(#6aa436));
+    background: -webkit-linear-gradient(top, #6aa436, #8dc059);
+    background: -moz-linear-gradient(top, #6aa436, #8dc059);
+    background: -ms-linear-gradient(top, #6aa436, #8dc059);
+    background: -o-linear-gradient(top, #6aa436, #8dc059);
+    background-image: -ms-linear-gradient(top, #6aa436 0%, #8dc059 100%);
+    color: #31540c;
+    font-family: helvetica, serif;
+    margin: auto;
+    margin-left: 7%;
+   
+} 
+.formEDIT input[type=submit]:hover {
+    cursor: pointer;
+    border: 1px solid #447314;
+    text-shadow: #31540c 0 1px 0;
+    background: #6aa436;
+    background: -webkit-gradient(linear, left top, left bottom, from(#8dc059), to(#6aa436));
+    background: -webkit-linear-gradient(top, #8dc059, #6aa436);
+    background: -moz-linear-gradient(top, #8dc059, #6aa436);
+    background: -ms-linear-gradient(top, #8dc059, #6aa436);
+    background: -o-linear-gradient(top, #8dc059, #6aa436);
+    background-image: -ms-linear-gradient(top, #8dc059 0%, #6aa436 100%);
+    color: #fff;
+}
+.field{ 
+    
+    margin: 0 auto;
+    margin-left: 5%;
+} 
+/******   END FORM CSS   ******/
+.formDELETE { 
+    width: 16px; 
+    height: 16px;
+    margin: 0;
+    padding: 0;
+    
+} 
+.formDELETE input[type=submit]{ 
+    height:16px;
+    width:16px;
+    margin: auto;
+    
+} 
+.formDELETE input[type=image]{ 
+    height:16px;
+    width:16px;
+    margin: auto;
+    
+} 
+.formDELETE input[type=submit]:hover {
+    cursor: pointer;
+    height:16px;
+    width:16px;
+    
+}
+
+
+form input#user {
+    display:inline;
+}
+form input#password {
+    display: inline;
+}
+form#access input[type=button] {
+    display: inline;
+}
+
+form input.button {
+    display: inline;
+}
+
+/* -----------------------------------
+DESKTOP @640px MIN SCREEN
+------------------------------------ */
+@media only screen and (min-width: 640px)
+{  
+    
+    section {
+        
+       
+        
+    }
+
+}
+
+
+/* -----------------------------------
+DESKTOP @1024px MIN SCREEN
+------------------------------------ */
+@media only screen and (min-width: 1024px)
+{  
+    
+    section {
+        
+       
+        
+    }
+
+}
+
+
+
+/* -----------------------------------
+DESKTOP @1280px MIN SCREEN
+------------------------------------ */
+@media only screen and (min-width: 1280px)
+{
+    #wrapper {
+        
+        width: 1024px;;
+                
+    }
+    
+    section {
+        
+        
+        
+    }
+
+
+}
+
+
+
+/* -----------------------------------
+DESKTOP @1366px MIN SCREEN
+------------------------------------ */
+@media only screen and (min-width: 1366px)
+{  
+    
+    #wrapper {
+        
+        width: 1280px;
+              
+    }
+    
+    #header {
+        float: left;
+        width: 100%;
+        top: 0;
+        margin: 0;
+        padding: 0;
+        
+       
+    }
+
+    section {
+        
+        
+        
+    }
+
+}
+
+
+
+/* -----------------------------------
+DESKTOP @1900px MIN SCREEN
+------------------------------------ */
+@media only screen and (min-width: 1900px)
+{  
+    
+    #wrapper {
+        
+        width: 1600px;
+              
+    }
+    
+    
+    
+
+}

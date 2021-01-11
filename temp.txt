@@ -1,0 +1,106 @@
+            <div class="toggleEDIT">
+    
+            <div class="moreEDIT" style="display:none">
+
+                <form class="form" id="formEdit" method="post" accept-charset="UTF-8">
+                    <div class="content">
+
+                        <div class="field"><input name="NomeJob" id="NomeJob" autofocus type="text" maxlength="8"></div>
+                        <div class="field"><input name="Libreria" id="Libreria" autofocus type="text" maxlength="2"></div>
+                            <div class="field">
+                                <select name="Macro" id="Macro" required readonly>
+                                    <option value="V10">V10</option>
+                                    <option value="VDE">VDE</option>
+                                    <option value="VES">VES</option>
+                                    <option value="VSW">VSW</option>
+                                    <option value="VFR">VFR</option>
+                                    <option value="VBE">VBE</option>
+                                    <option value="VHK">VHK</option>
+                                    <option value="VAU">VAU</option>
+                                    <option value="VNE">VNE</option>
+                                    <option value="VPT">VPT</option>
+                                    <option value="VUK">VUK</option>
+                                    <option value="VCH">VCH</option>
+                                    <option value="VSL">VSL</option>
+                                    <option value="VGE">VGE</option>
+                                    <option value="VAF">VAF</option>
+                                    <option value="VMX">VMX</option>
+                                    <option value="VHE">VHE</option>
+                                    <option value="VYA">VYA</option>
+                                    <option value="VUM">VUM</option>
+                                </select>
+                            </div>
+                        <div class="field"><textarea name="parametri" id="parametri" maxlength="250" wrap="hard"></textarea></div>
+                        <div class="field"><textarea name="nota" id="nota" wrap="hard" placeholder="nota"></textarea></div>
+                            <div class="field"><label for="sospeso">sospeso&nbsp;</label><span>si</span><input name="sospeso" id="sospeso" type="radio" readonly 
+                                value="si" checked="no"><span>no</span><input name="sospeso" id="sospeso" type="radio" readonly value="no" checked="yes">
+                            </div>
+                            <div class="field"><label for="edit"></label>
+                                <input name="edit" id="edit" type="submit" value="edit job">
+                                <input type="hidden" name="edit" value="<?php $next = True; echo "$hash"; ?>">
+                                <input type="hidden" name="next" value="True">
+                            </div>
+                    </div> <!--  END #content -->
+                </form>
+
+            </div> <!--  END #moreEDIT -->
+    
+            <div class="lessEDIT">
+                <a class="button-read-moreEDIT button-readEDIT" href="#read"><img src="./images/edit.jpg" alt="INSERT JOB" height="16" width="16"><a>
+                <a class="button-read-lessEDIT button-readEDIT" href="#read"><img src="./images/edit.jpg" alt="HIDE JOB" height="16" width="16"></a>
+            </div>
+    
+        </div> <!--  END #toggleEDIT -->
+        
+        
+        
+        
+        
+        
+        //*** CSS for editJob ***
+    /*
+    .toggleEDIT {
+        width: 100%;
+    }
+    
+    .lessEDIT {
+        display: block;
+        float: left;
+        width: 96%;
+        cursor: pointer;
+        margin-left: 2%;
+        margin-right:2%;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        padding-top: 3px;
+        background-color: #FFFFFF;
+    }
+    .lessEDIT.active .button-read-moreEDIT {
+        display: none;
+     }
+    .button-read-lessEDIT {
+        display: none;
+    }
+    .lessEDIT.active .button-read-lessEDIT {
+        display: block; 
+    }
+   
+    .moreEDIT {
+        display: block;
+        width: 96%;
+        margin-left: 2%;
+        margin-right:2%;
+        padding-bottom: 28px;
+        margin-top: 3px;
+        display: inline-block;
+        height: 122px;
+        color: blue;
+        background-color: grey;
+    }
+    .moreEDIT p {
+        margin: 0;
+        padding: 0;
+       
+    }
+    */
+    //*** end CSS editJob ***
